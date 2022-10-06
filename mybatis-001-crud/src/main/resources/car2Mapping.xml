@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace先随意写一个-->
+<mapper namespace="car2">
+    <!--insert sql：保存一个汽车信息 map传参-->
+<!--    <insert id="insertCar">-->
+<!--        insert into t_car-->
+<!--            (id,car_num,brand,guide_price,produce_time,car_type)-->
+<!--        values-->
+<!--            (null,#{car_num},#{brand},#{guide_price},#{produce_time},#{car_type})-->
+<!--    </insert>-->
+
+    <insert id="insertCar">
+        insert into t_car (id,car_num,brand,guide_price,produce_time,car_type)
+        values (null,#{carNum},#{brand},#{guidePrice},#{produceTime},#{carType})
+    </insert>
+
+    <delete id="deleteById">
+        delete from t_car where id = #{sss}
+    </delete>
+    
+    <select id="queryId" resultType="com.pojo.Car">
+        select *
+        from t_car where id = #{id};
+    </select>
+
+    <select id="selectAll" resultType="com.pojo.Car">
+        select *
+        from t_car ;
+    </select>
+</mapper>

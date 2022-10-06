@@ -1,0 +1,32 @@
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+
+<configuration>
+
+<!--    未指时，自动查找。想开启标准输出日志才需要配置-->
+<!--    <settings>-->
+<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+<!--    </settings>-->
+    
+    
+    <environments default="development">
+        <!--一个environment对应一个SessionFactory,也对应一个数据库-->
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+                <property name="username" value="root"/>
+                <property name="password" value=""/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="carMapping.xml"></mapper>
+        <mapper resource="car2Mapping.xml"></mapper>
+
+    </mappers>
+</configuration>
