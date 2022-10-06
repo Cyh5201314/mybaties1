@@ -12,6 +12,8 @@ import java.io.IOException;
  */
 public class SessionUtil {
 
+
+
     private static SqlSessionFactory  sessionFactory;
 
     private SessionUtil(){}
